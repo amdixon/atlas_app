@@ -6,7 +6,7 @@ gem 'mini_magick'
 gem 'carrierwave', '>= 0.5.3'
 gem 'acts_as_list'
 gem 'fog', '~> 1.3.1'
-gem 'jquery-rails'
+gem 'jquery-rails', '2.0.2'
 gem 'omniauth-facebook'
 
 group :development, :test do

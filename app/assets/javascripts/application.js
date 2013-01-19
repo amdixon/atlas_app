@@ -12,4 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
+//= require jquery.watermark.min
+//= require jquery.infinitescroll.min
+//= require jquery.masonry.min
 //= require_tree .

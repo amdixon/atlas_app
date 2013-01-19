@@ -1,0 +1,18 @@
+<% provide(:title, "Sign in") %>
+<h1>Sign in</h1>
+
+<div class="row">
+  <div class="">
+    
+	<%= form_for(:session, url: sessions_path) do |f| %>
+
+	  <%= f.text_field :email, :title => "Email", class: "jq_watermark" %>
+
+	  <%= f.password_field :password, :title => "Password", class: "jq_watermark" %>
+
+	  <%= f.submit "Sign in", class: "btn" %>
+	<% end %>
+
+    <p><%= link_to "Sign up", signup_path %></p>
+  </div>
+</div>

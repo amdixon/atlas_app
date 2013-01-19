@@ -1,0 +1,100 @@
+/* Universal */
+html {
+	background-color:#f3f3f3;
+	font-size:10pt;
+	color:#333;
+	font-family:Helvetica, Arial, sans-serif;
+}
+
+body {
+	
+}
+
+ul, ol, li {list-style:none;}
+
+h1 { /* atlas title font */
+	font-family:serif;
+	font-size:30pt;
+	text-align:center;
+}
+
+h2 { /* sub title font */
+	font-family:sans-serif;
+	font-size:14pt;
+}
+
+h3 { /* big azz serif font */
+	font-family:serif;
+	font-size:30pt;
+	text-transform:uppercase;
+}
+
+h4 { /* big azz sans-serif font */
+	font-size:30pt;
+	text-transform:uppercase;
+}
+
+p {
+	
+}
+
+a {
+	color:#333;
+	text-decoration:none;
+}
+
+a:hover {
+	color:#993300;
+}
+
+/* Container */
+#container {
+	margin:0 auto;
+	width:960px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Buttons */
+.btn {
+	padding:8px;
+	color:#333;
+	background-color:#f3f3f3;
+	border:none;
+	-webkit-transition: all 0.20s ease-in-out;
+	-moz-transition: all 0.20s ease-in-out;
+	-ms-transition: all 0.20s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+}
+
+.btn:hover {
+	color:#c77660;
+	cursor:pointer;
+}
+
+
+
+
+
+/* Footer */
+#footer {
+	position:absolute;
+	bottom:15px;
+	left:20px;
+}
+
+
+
+
+
+
+
+

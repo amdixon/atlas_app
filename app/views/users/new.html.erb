@@ -4,20 +4,17 @@
 <div>
   <div>
     <%= form_for(@user) do |f| %>
+		<%= render 'shared/error_messages' %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, :title => "Username", class: "jq_watermark" %>
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+      <%= f.text_field :email, :title => "Email Address", class: "jq_watermark" %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= f.password_field :password, :title => "Password", class: "jq_watermark" %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.password_field :password_confirmation, :title => "Retype Password", class: "jq_watermark" %>
 
-      <%= f.submit "Create my account", class: "" %>
+      <%= f.submit "Signup!", class: "btn" %>
     <% end %>
   </div>
 </div>
