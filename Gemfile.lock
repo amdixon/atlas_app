@@ -139,10 +139,7 @@ DEPENDENCIES
   bcrypt-ruby
   carrierwave (>= 0.5.3)
   coffee-rails (~> 3.2.1)
-<<<<<<< HEAD
-=======
   hirb
->>>>>>> cc743d7634ea298221a7eb3621165fbb4d878e06
   jquery-rails (= 2.0.2)
   mini_magick
   omniauth-facebook
