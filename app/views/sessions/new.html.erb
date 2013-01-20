@@ -10,9 +10,9 @@
 
 	  <%= f.password_field :password, :title => "Password", class: "user-input jq_watermark" %>
 
-	  <%= f.submit "Sign in", class: "btn" %>
+	  <%= f.submit "Login", class: "btn" %>
 	<% end %>
 
-    <p><%= link_to "Sign up", signup_path %></p>
+    <p>New user? <%= link_to "Sign up", signup_path, class: "btn" %></p>
   </div>
 </div>
