@@ -6,11 +6,11 @@
 
 <%= form_tag city_index_path, :method => 'get' do %>
   <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "SPIN", :name => nil %>
-
+  <%= submit_tag "SEARCH", :name => nil %>
 <% end %>
+<span style="font-size: 9px; color: #aaa">LEAVE BLANK TO BRING UP WHOLE DATABASE</span>
 
-<br>
+<br><br>
 <p>Popular Cities</p>
 <table>
 <% @city.each do |city| %>
