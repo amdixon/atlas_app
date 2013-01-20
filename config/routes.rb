@@ -1,5 +1,8 @@
 AtlasApp::Application.routes.draw do
   
+  resources :city
+  resources :search_suggestions
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   

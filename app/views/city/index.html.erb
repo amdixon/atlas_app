@@ -1,0 +1,10 @@
+<h1>You searched:</h1>
+
+<table>
+<% @city.each do |city| %>
+  <tr>
+    <td><%= city.name %>,</td>
+    <td><%= city.country %></td>
+  </tr>
+<% end %>
+</table>

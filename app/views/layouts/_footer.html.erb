@@ -3,6 +3,6 @@
 	<p>Hey, <%= current_user.name %></p>
 	<%= link_to "Sign Out", signout_path, method: "delete" %>
 	<% else %>
-		<%= link_to "Sign In", signin_path %>
+		<%= link_to "Sign In", signin_path, class: "btn" %>
 	<% end %>
 </div>

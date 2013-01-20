@@ -2,4 +2,22 @@
 
 <h1>AAATLAS</h1>
 
+<h2>Search City</h2>
+
+<%= form_tag city_index_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "SEARCH", :name => nil %>
+<% end %>
+<span style="font-size: 9px; color: #aaa">LEAVE BLANK TO BRING UP WHOLE DATABASE</span>
+
+<br><br>
+<p>Popular Cities</p>
+<table>
+<% @city.each do |city| %>
+  <tr>
+    <td><%= city.name %></td>
+  </tr>
+<% end %>
+</table>
+
 </div>
