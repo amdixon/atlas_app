@@ -1,7 +1,13 @@
 class SearchSuggestionsController < ApplicationController
   
   def index
-    @city = City.search(params[:term])
+    search = params[:term]
+    if search
+      @city = City.where( ["name LIKE ?", "%#{search}%"] )
+    else
+      @city = City.all
+    end
+    
     render :json => @city.map { |city| city.name }
   
   end
