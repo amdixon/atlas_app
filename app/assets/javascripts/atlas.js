@@ -1,0 +1,1 @@
+$.watermarker.setDefaults({left: -3});

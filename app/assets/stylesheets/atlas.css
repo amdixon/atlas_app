@@ -54,13 +54,38 @@ a:hover {
 }
 
 
+/* Inputs */
+input, textarea {
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: none;
+	border: 1px solid #ccc;
+}
 
+input:focus, textarea:focus {
+	-webkit-box-shadow:0 0 3px #65a5cc;
+	-moz-box-shadow:0 0 3px #65a5cc;
+	-ms-box-shadow:0 0 3px #65a5cc;
+	box-shadow:0 0 3px #65a5cc;
+	border-color:#65a5cc;
+	outline:none;
+}
 
+input[type=text] {
+	padding-left:4px;
+}
 
+input[type=password] {
+	padding-left:4px;
+}
 
-
-
-
+.user-input {
+	width:140px;
+	height:10px;
+	padding:5px;
+}
 
 
 /* Buttons */
@@ -69,6 +94,7 @@ a:hover {
 	color:#333;
 	background-color:#f3f3f3;
 	border:none;
+	font-size:10pt;
 	-webkit-transition: all 0.20s ease-in-out;
 	-moz-transition: all 0.20s ease-in-out;
 	-ms-transition: all 0.20s ease-in-out;
@@ -79,9 +105,6 @@ a:hover {
 	color:#c77660;
 	cursor:pointer;
 }
-
-
-
 
 
 /* Footer */

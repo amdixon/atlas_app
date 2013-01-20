@@ -6,9 +6,9 @@
     
 	<%= form_for(:session, url: sessions_path) do |f| %>
 
-	  <%= f.text_field :email, :title => "Email", class: "jq_watermark" %>
+	  <%= f.text_field :email, :title => "Email", class: "user-input jq_watermark" %>
 
-	  <%= f.password_field :password, :title => "Password", class: "jq_watermark" %>
+	  <%= f.password_field :password, :title => "Password", class: "user-input jq_watermark" %>
 
 	  <%= f.submit "Sign in", class: "btn" %>
 	<% end %>
