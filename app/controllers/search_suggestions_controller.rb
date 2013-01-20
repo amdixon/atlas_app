@@ -3,7 +3,7 @@ class SearchSuggestionsController < ApplicationController
   def index
     search = params[:term]
     if search
-      @city = City.where( ["name LIKE ?", "%#{search}%"] )
+      @city = City.where( ["name ILIKE ?", "%#{search}%"] )
     else
       @city = City.all
     end
