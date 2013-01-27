@@ -1,28 +1,48 @@
-<div id="container">
+<style>
+  html{
+    background: #aaa;
+  }
+</style>
 
-<h1>AAATLAS</h1>
-
-<h2>Search City</h2>
-
-<%= form_tag city_index_path, :method => 'get' do %>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "SEARCH", :name => nil %>
-<% end %>
-<span style="font-size: 9px; color: #aaa">LEAVE BLANK TO BRING UP WHOLE DATABASE</span>
-
-<br><br>
-<p>Popular Cities</p>
-<table>
-<% @city.each do |city| %>
-  <tr>
-    <td><%= city.name %></td>
-  </tr>
-<% end %>
-</table>
-
+<!-- PROFILE SLIDE IN LEFT -->
+<div id="profile" style="display: none">
+  
+  <h2>Hello User</h2>
 </div>
 
 
+
+<!-- MASONRY INFINTE SCROLL CONTENT -->
+<div id="content">
+
+  <div id="home">
+    <%= image_tag 'atlas.png' %>
+    
+    <h2 style="visibility: visible">VISUAL PLACES</h2>
+    
+    <%= form_tag city_index_path, :method => 'get', :class => 'big-search' do %>
+      <%= text_field_tag :search, params[:search], :title => "Search or Spin", :class =>  'jq_watermark'  %>
+      <%= submit_tag "SPIN", :name => nil  %>
+    <% end %>
+
+    
+  </div><!-- /home -->
+  
+</div><!-- /content -->
+
+
+
+<!-- FOOTER -->
+<div id="footer-home">
+  
+  <span class='btn-wrap'>
+    <div class='footer-btn' id='profile-btn'></div>
+  </span>
+
+
+  
+</div>
+<!--
 <div id="footer">
 	<% if signed_in? %>
 		<p>Hey, <%= current_user.name %></p>
@@ -31,3 +51,7 @@
 		<%= link_to "Sign In", signin_path, class: "btn" %>
 	<% end %>
 </div>
+-->
+
+<%= javascript_include_tag 'city.js' %>
+
