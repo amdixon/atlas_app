@@ -1,10 +1,47 @@
-<h1>You searched:</h1>
 
-<table>
-<% @city.each do |city| %>
-  <tr>
-    <td><%= city.name %>,</td>
-    <td><%= city.country %></td>
-  </tr>
-<% end %>
-</table>
+<!-- PROFILE SLIDE IN LEFT -->
+<div id="profile" style="display: none">
+  
+  <h2>Hello User</h2>
+</div>
+
+
+<!-- MASONRY INFINTE SCROLL CONTENT -->
+<div id="content">
+
+  <table>
+    <% @city.each do |city| %>
+      <tr>
+        <td><%= city.name %>,</td>
+        <td><%= city.country %></td>
+      </tr>
+    <% end %>
+  </table>
+  
+</div>
+
+
+<!-- FOOTER -->
+<div id="footer-main">
+  
+  <span class='btn-wrap' id='profile-btn'>
+    <div id="footer-btn"></div>
+  </span>
+  <span class='btn-wrap' id='save-btn'>
+    <div id="footer-btn"></div>
+  </span>
+  
+  <div id="search-wrap">
+    <form>
+      <input class="footer-search" id="footer-search" type="text" value="Search or Spin">
+      <input class="footer-search" id="footer-search-btn" value="SPIN" type="submit">
+    </form>
+  </div>
+  
+  <div id="logo">
+    <%= image_tag 'logo.png' %>
+  </div>
+  
+</div>
+
+<%= javascript_include_tag 'city.js' %>
