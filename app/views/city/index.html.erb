@@ -47,3 +47,51 @@
 Not signed in.
 
 <% end %>
+=======
+
+<!-- PROFILE SLIDE IN LEFT -->
+<div id="profile" style="display: none">
+  
+  <h2>Hello User</h2>
+</div>
+
+
+<!-- MASONRY INFINTE SCROLL CONTENT -->
+<div id="content">
+
+  <table>
+    <% @city.each do |city| %>
+      <tr>
+        <td><%= city.name %>,</td>
+        <td><%= city.country %></td>
+      </tr>
+    <% end %>
+  </table>
+  
+</div>
+
+
+<!-- FOOTER -->
+<div id="footer-main">
+  
+  <span class='btn-wrap'>
+    <div class='footer-btn' id='profile-btn'></div>
+  </span>
+  <span class='btn-wrap'>
+    <div class='footer-btn' id='save-btn'></div>
+  </span>
+  
+  <div id="search-wrap">
+    <form>
+      <input class="footer-search" id="footer-search" type="text" value="Enter City or Spin">
+      <input class="footer-search" id="footer-search-btn" value="O" type="submit">
+    </form>
+  </div>
+  
+  <div id="logo">
+    <%= image_tag 'logo.png' %>
+  </div>
+  
+</div>
+
+<%= javascript_include_tag 'city.js' %>

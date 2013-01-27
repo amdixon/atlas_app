@@ -1,9 +1,9 @@
 class SearchSuggestionsController < ApplicationController
   
   def index
-    search = params[:term]
+    search = params[:term].upcase
     if search
-      @city = City.where( ["name ILIKE ?", "%#{search}%"] )
+      @city = City.where( ["name LIKE ?", "%#{search}%"] )
     else
       @city = City.all
     end
