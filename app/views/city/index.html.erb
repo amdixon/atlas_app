@@ -8,3 +8,42 @@
   </tr>
 <% end %>
 </table>
+
+
+<% if signed_in? %>
+
+<div class="profile-container">
+	<div class="profile-user">		
+		<% if @profile.image %>
+			<%= image_tag @profile.image_url(:web) %>
+		<% else %>
+			<%= image_tag('user-blank.png')%>
+		<% end %>
+		
+		<%= @user.name %>
+		
+		<%= @profile.home %>
+	</div>
+	
+	<div class="profile-citylist">
+		<ul>
+			<% for city in user.cities %>
+				<% if city.position == 1 %>
+					<li class="profile-city-1">
+					<%= city.name %>
+					</li>
+				<% else %>
+					<li class="profile-city-all">
+					<%= city.name %>
+					</li>
+				<% end %>
+			<% end %>
+		</ul>
+	</div>
+</div>
+
+<% else %>
+
+Not signed in.
+
+<% end %>

@@ -1,0 +1,26 @@
+<%= form_for(@user) do |f| %>
+<%= render 'shared/error_messages' %>
+
+	<ul>
+		<li>
+		<%= f.text_field :name, :title => "Username", class: "jq_watermark" %>
+		</li>
+		
+		<li>
+		<%= f.text_field :email, :title => "Email Address", class: "jq_watermark" %>
+		</li>
+		
+		<li>
+		<%= f.password_field :password, :title => "Password", class: "jq_watermark" %>
+		</li>
+		
+		<li>
+		<%= f.password_field :password_confirmation, :title => "Retype Password", class: "jq_watermark" %>
+		</li>
+		
+		<li>
+		<%= f.submit "Signup!", class: "btn" %>
+		</li>
+	</ul>
+	
+<% end %>

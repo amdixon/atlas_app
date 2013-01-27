@@ -1,20 +1,4 @@
 <% provide(:title, 'Sign up') %>
 <h1>Sign up</h1>
 
-<div>
-  <div>
-    <%= form_for(@user) do |f| %>
-		<%= render 'shared/error_messages' %>
-
-      <%= f.text_field :name, :title => "Username", class: "jq_watermark" %>
-
-      <%= f.text_field :email, :title => "Email Address", class: "jq_watermark" %>
-
-      <%= f.password_field :password, :title => "Password", class: "jq_watermark" %>
-
-      <%= f.password_field :password_confirmation, :title => "Retype Password", class: "jq_watermark" %>
-
-      <%= f.submit "Signup!", class: "btn" %>
-    <% end %>
-  </div>
-</div>
+<%= render 'form' %>

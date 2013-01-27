@@ -16,4 +16,5 @@
 //= require jquery.watermark.min
 //= require jquery.infinitescroll.min
 //= require jquery.masonry.min
+//= require jquery.Jcrop.min
 //= require_tree .

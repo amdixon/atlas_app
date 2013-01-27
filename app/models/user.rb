@@ -1,8 +1,9 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :email, :password, :password_confirmation
+  attr_accessible :name, :email, :password, :password_confirmation, :profile_attributes
   has_secure_password
   
-  has_many :favorites
+  has_one :profile
+  before_create :build_default_profile
 
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
@@ -19,5 +20,10 @@ class User < ActiveRecord::Base
 
       def create_remember_token
         self.remember_token = SecureRandom.urlsafe_base64
+      end
+      
+      def build_default_profile
+        build_profile
+        true
       end
 end

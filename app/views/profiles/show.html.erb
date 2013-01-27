@@ -1,0 +1,19 @@
+<% provide(:title, "Profile") %>
+
+<% if @profile.image %>
+	<%= image_tag @profile.image_url(:web) %>
+<% else %>
+	<%= image_tag('user-blank.png') %>
+<% end %>
+
+<!--
+
+<ul id="favorites" data-update-url="<%= sort_favorites_path %>">
+	<% @favorites.each do |favorite| %>
+		<%= content_tag_for :li, favorite do %>
+			<%= city.name %>
+		<% end %>
+	<% end %>
+</ul>
+
+-->

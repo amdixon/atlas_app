@@ -1,0 +1,26 @@
+<%= form_for(@profile) do |f| %>
+
+
+	<ul>
+		<li>
+		<% if @profile.image? %>
+			<%= image_tag profile.image_url(:web) %><br />
+			<%= f.file_field :image, class: "form-file" %><br />
+			Change your profile image.<br />
+		<% else %>
+			<%= image_tag('user-blank.png') %><br />
+			<%= f.file_field :image, class: "form-file" %><br />
+			Add a profile image.<br />
+		<% end %>
+		</li>
+		
+		<li>
+		<%= f.text_field :home, :title => "Your City", class: "jq_watermark" %><br />
+		</li>
+		
+		<li>
+		<%= f.submit "Update!", class: "btn" %>
+		</li>
+	</ul>
+	
+<% end %>
