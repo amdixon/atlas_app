@@ -271,7 +271,7 @@ input[type=submit] {
 }
 .footer-search:focus{
 	box-shadow: inset 0px 0px 1px 1px #999;
-	width: 250px;
+	width: 320px;
 }
 #logo{
 	position: absolute;
