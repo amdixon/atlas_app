@@ -21,7 +21,7 @@
     <h2 style="visibility: visible">VISUAL PLACES</h2>
     
     <%= form_tag city_index_path, :method => 'get', :class => 'big-search' do %>
-      <%= text_field_tag :search, params[:search], :title => "Search or Spin", :class =>  'jq_watermark'  %>
+      <%= text_field_tag :search, params[:search], :title => "Enter City or Spin", :class =>  'jq_watermark'  %>
       <%= submit_tag "SPIN", :name => nil  %>
     <% end %>
 
