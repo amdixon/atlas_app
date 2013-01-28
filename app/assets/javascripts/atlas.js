@@ -18,6 +18,17 @@ $('#profile-click').click( function(){
 //erase footer search bar autofill
 $('#again').val('')
 
+//masonry loader
+var masonryContent = $('#tumblelog')
+
+
+$(masonryContent).imagesLoaded( function(){
+    $(masonryContent).masonry({
+	columnWidth: 240,
+	isAnimated: true,
+    })
+})
+
 
 /////// LOAD WHEN DOCUMENT READY /////////////
 $(document).ready( function(){

@@ -7,6 +7,7 @@ html {
 	color:#333;
 	font-family:Helvetica, Arial, sans-serif;
 	height: 100%;
+	overflow-x: hidden;
 }
 
 body {
@@ -14,14 +15,14 @@ body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	overflow-x: hidden;
 }
 
 ul, ol, li {list-style:none;}
 
 h1 { /* atlas title font */
-	font-family:serif;
+	font-family: serif;
 	font-size:30pt;
-	text-align:center;
 }
 
 h2 { /* sub title font */
@@ -84,7 +85,8 @@ a:hover {
 	position: absolute;
 	z-index: 0;
 	width: 100%;
-	
+	margin-left: 20px;
+	padding: 0 0 60px 0;
 }
 
 
@@ -144,6 +146,13 @@ a:hover {
 	color: #ccc;
 	background: #111;
 }
+
+#masonry-content .col1 { width: 220px; }
+#masonry-content .col2 { width: 460px; }
+#masonry-content .col3 { width: 700px; }
+
+
+
 
 /* Inputs */
 form{
