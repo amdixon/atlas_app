@@ -167,6 +167,10 @@ input, textarea {
 	-moz-transition: all 0.30s ease-in-out;
 	-ms-transition: all 0.30s ease-in-out;
 	-o-transition: all 0.30s ease-in-out;
+	animation-delay:2s;
+	-moz-animation-delay:2s; /* Firefox */
+	-webkit-animation-delay:2s; /* Safari and Chrome */
+	-o-animation-delay:2s; /* Opera */
 }
 
 input[type=text] {

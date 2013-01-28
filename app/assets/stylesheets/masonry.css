@@ -222,6 +222,10 @@ button {
   max-width: none;
 }
 
+#tumblelog .attweet{
+  color: #bbb;
+}
+
 /* Infinite Scroll loader */
 #infscr-loading { 
   text-align: center;
