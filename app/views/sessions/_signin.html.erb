@@ -2,18 +2,42 @@
 
 
 <div class="row">
-  <div class="user-input">
+  <div id="user-sign-in" class="user-input">
     
 	<%= form_for(:session, url: sessions_path, class: 'user-input') do |f| %>
 
 	  <%= f.text_field :email, :title => "Email", class: "jq_watermark" %>
 
-	  <%= f.password_field :password, :title => "Password", class: "jq_watermark" %>
+	  <%= f.password_field :password, :title => "Password", class: "jq_watermark" %><br /><br />
 
-	  <%= f.submit "Login", class: "btn" %>
+	  <a id="sign-in-link" class="btn">Login</a>
+	
+	  <script>
+		$('#sign-in-link').click( function() {
+			var data1 = $('#session_email').val()
+			var data2 = $('#session_password').val()
+			$.post('sessions', {'email' : data1, 'password' : data2}, function(data) {
+				$('.row').html(data);
+			}, 'html')
+			
+		})
+	  </script>
+	
 	<% end %>
     <br><br>
-    <p>New user? <%= link_to "Sign up", signup_path, class: "btn" %></p>
-    
+    <p><b>New user?</b> Create a profile to save cities and revisit past locations.<br /><br />
+	
+	<a id="sign-up-link" class="btn">Sign up</a></p>
+	
   </div>
 </div>
+
+
+<script>
+$('#sign-up-link').click( function() { 
+	$.get('users/new', function(data){
+		$('.row').html(data);
+		$('input.call-watermark').watermark();
+	}, 'html')
+});
+</script>

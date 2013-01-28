@@ -2,8 +2,11 @@ class CityController < ApplicationController
 
   def index
     @city = City.search(params[:search])
-    @user = current_user
-    @profile = Profile.find_by_user_id(@user.id)
+    if signed_in?
+      @profile = current_user.profile
+      @favorites = Favorite.first(10)
+      @favorite = Favorite.new
+    end
   end
   
 end

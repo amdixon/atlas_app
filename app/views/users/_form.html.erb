@@ -1,26 +1,35 @@
-<%= form_for(@user) do |f| %>
-<%= render 'shared/error_messages' %>
+<div id="user-sign-in" class="user-input">
 
-	<ul>
-		<li>
-		<%= f.text_field :name, :title => "Username", class: "jq_watermark" %>
-		</li>
+<%= form_for(@user) do |f| %>
 		
-		<li>
-		<%= f.text_field :email, :title => "Email Address", class: "jq_watermark" %>
-		</li>
+		<%= f.text_field :name, :title => "Username", class: "jq_watermark call-watermark" %>
+
+		<%= f.text_field :email, :title => "Email Address", class: "jq_watermark call-watermark" %>
+
+		<%= f.password_field :password, :title => "Password (min. 6 characters)", class: "jq_watermark call-watermark" %>
+
+		<%= f.password_field :password_confirmation, :title => "Verify Password", class: "jq_watermark call-watermark" %>
 		
-		<li>
-		<%= f.password_field :password, :title => "Password", class: "jq_watermark" %>
-		</li>
+		<p>All fields are required</p>
+
+		<a id="process-info" class="btn">Submit</a>
 		
-		<li>
-		<%= f.password_field :password_confirmation, :title => "Retype Password", class: "jq_watermark" %>
-		</li>
+		<%= render 'shared/error_messages' %>
 		
-		<li>
-		<%= f.submit "Signup!", class: "btn" %>
-		</li>
-	</ul>
-	
+		<script>
+			$('#process-info').click( function() {
+				alert('what?')
+				var data1 = $('#user_name').val()
+				var data2 = $('#user_email').val()
+				var data3 = $('#user_password').val()
+				var data4 = $('#user_password_confirmation').val()
+				$.post('users', {'name' : data1, 'email' : data2, 'password' : data3, 'password_confirmation' : data4}, function(data) {
+					$('.row').html(data);
+				}, 'html')
+
+			})
+		</script>
+
 <% end %>
+
+</div>

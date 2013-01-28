@@ -243,6 +243,12 @@ input[type=submit] {
 	height: auto;
 	cursor: pointer;
 }
+
+.btn-absolute {
+	position:absolute;
+	bottom:-12px;
+}
+
 .footer-btn{
 	display: inline-block;
 	width: 22px;
@@ -258,10 +264,16 @@ input[type=submit] {
 #profile-btn:hover{
 	opacity: 1.0;
 }
+
+.click-area {
+	opacity:0;
+}
+
 #save-btn{
 	opacity: 0.7;
 	background: url('save.png') no-repeat;
 }
+
 #save-btn:hover{
 	opacity: 1.0;
 }

@@ -1,74 +1,27 @@
-<h1>You searched:</h1>
-
-<table>
-<% @city.each do |city| %>
-  <tr>
-    <td><%= city.name %>,</td>
-    <td><%= city.country %></td>
-  </tr>
-<% end %>
-</table>
-
-
-<% if signed_in? %>
-
-<div class="profile-container">
-	<div class="profile-user">		
-		<% if @profile.image %>
-			<%= image_tag @profile.image_url(:web) %>
-		<% else %>
-			<%= image_tag('user-blank.png')%>
-		<% end %>
-		
-		<%= @user.name %>
-		
-		<%= @profile.home %>
-	</div>
-	
-	<div class="profile-citylist">
-		<ul>
-			<% for city in user.cities %>
-				<% if city.position == 1 %>
-					<li class="profile-city-1">
-					<%= city.name %>
-					</li>
-				<% else %>
-					<li class="profile-city-all">
-					<%= city.name %>
-					</li>
-				<% end %>
-			<% end %>
-		</ul>
-	</div>
-</div>
-
-<% else %>
-
-Not signed in.
-
-<% end %>
-=======
-
 <!-- PROFILE SLIDE IN LEFT -->
-<div id="profile" style="display: none">
-  
-  <h2>Hello User</h2>
-</div>
+
+<%= render 'profiles/profile' %>
 
 
-<!-- MASONRY INFINTE SCROLL CONTENT -->
+<!-- MASONRY INFINITE SCROLL CONTENT -->
 <div id="content">
 
   <table>
     <% @city.each do |city| %>
       <tr>
+		<div id="city-id"><%= city.id %></div>
         <td><%= city.name %>,</td>
         <td><%= city.country %></td>
       </tr>
+	
+		<div >
+			
+
     <% end %>
   </table>
   
 </div>
+
 
 
 <!-- FOOTER -->
@@ -77,9 +30,18 @@ Not signed in.
   <span class='btn-wrap'>
     <div class='footer-btn' id='profile-btn'></div>
   </span>
-  <span class='btn-wrap'>
-    <div class='footer-btn' id='save-btn'></div>
-  </span>
+	<% @city.each do |city| %>
+  	<% if signed_in? %>
+	<%= form_for @favorite, remote: true do |f| %>
+		<%= f.hidden_field :city_id, :value => city.id %>
+		<%= f.hidden_field :name, :value => city.name %>
+		<%= f.hidden_field :country, :value => city.country %>
+		<span class='btn-wrap btn-absolute' id="save-btn">
+		  <%= f.submit 'O', class: "click-area" %>
+		</span>
+	<% end %>
+	<% end %>
+	<% end %>
   
   <div id="search-wrap">
     <form>
@@ -89,7 +51,9 @@ Not signed in.
   </div>
   
   <div id="logo">
+	<%= link_to :root do %>
     <%= image_tag 'logo.png' %>
+	<% end %>
   </div>
   
 </div>

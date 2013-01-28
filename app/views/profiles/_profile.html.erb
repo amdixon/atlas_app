@@ -1,0 +1,30 @@
+<div id="profile" style="display: none">
+  <div id='profile-content'>
+  
+  	<% if signed_in? %>
+			<% if @profile.image? %>
+				<%= image_tag @profile.image_url(:web) %>
+			<% else %>
+				<%= image_tag('user-blank.png') %>
+			<% end %>
+			
+            <p>Hey, <%= current_user.name %></p>
+			<%= @profile.home %>
+
+			<p>Current favorites:</p>
+			
+			<ul id="favorites" data-update-url="<%= sort_favorites_path %>">
+				<% @favorites.each do |favorite| %>
+					<%= content_tag_for :li, favorite do %>
+						<%= favorite.name %>, <%= favorite.country %>
+					<% end %>
+				<% end %>
+			</ul>
+			
+            <%= link_to "Sign Out", signout_path, method: "delete", class: "btn" %>
+	<% else %>
+            <%= render :partial => '/sessions/signin' %>
+	<% end %>
+	
+  </div>
+</div>

@@ -9,10 +9,12 @@ class UsersController < ApplicationController
 
     def new
       @user = User.new
+      render :layout => false
     end
     
     def create
       @user = User.new(params[:user])
+      
       if @user.save
         flash[:success] = "Profile created successfully!"
         redirect_to edit_profile_path(@user.profile)
