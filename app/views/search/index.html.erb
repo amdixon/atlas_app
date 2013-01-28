@@ -5,18 +5,8 @@
 </style>
 
 <!-- PROFILE SLIDE IN LEFT -->
-<div id="profile" style="display: none">
-  <div id='profile-content'>
-  
-  	<% if signed_in? %>
-            <p>Hey, <%= current_user.name %></p>
-            <%= link_to "Sign Out", signout_path, method: "delete" %>
-	<% else %>
-            <%= render :partial => '/sessions/signin' %>
-	<% end %>
-	
-  </div>
-</div>
+
+<%= render 'profiles/profile' %>
 
 
 

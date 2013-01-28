@@ -1,18 +1,18 @@
 <!-- PROFILE SLIDE IN LEFT -->
+
+
 <link href='http://fonts.googleapis.com/css?family=Lato:300,700|Prata' rel='stylesheet' type='text/css'>
 
-<div id="profile" style="display: none">
-  
-  <h2>Hello User</h2>
-</div>
+<%= render 'profiles/profile' %>
 
 
-<!-- MASONRY INFINTE SCROLL CONTENT -->
+<!-- MASONRY INFINITE SCROLL CONTENT -->
 <div id="content">
 
   <div id="tumblelog" style="opacity: 0">
     
     <% @city.each do |city| %>
+
       <div class="story col2">
         <h1 id="city_name"><%= city.name %></h1>
         <h4><%= city.country %></h4>
@@ -136,15 +136,25 @@
 </div>
 
 
+
 <!-- FOOTER -->
 <div id="footer-main">
   
   <span class='btn-wrap' id='profile-click'>
     <div class='footer-btn' id='profile-btn'></div>
   </span>
-  <span class='btn-wrap'>
-    <div class='footer-btn' id='save-btn'></div>
-  </span>
+	<% @city.each do |city| %>
+  	<% if signed_in? %>
+	<%= form_for @favorite, remote: true do |f| %>
+		<%= f.hidden_field :city_id, :value => city.id %>
+		<%= f.hidden_field :name, :value => city.name %>
+		<%= f.hidden_field :country, :value => city.country %>
+		<span class='btn-wrap btn-absolute' id="save-btn">
+		  <%= f.submit 'O', class: "click-area" %>
+		</span>
+	<% end %>
+	<% end %>
+	<% end %>
   
   <div id="search-wrap">
     
@@ -157,7 +167,9 @@
   </div>
   
   <div id="logo">
+	<%= link_to :root do %>
     <%= image_tag 'logo.png' %>
+	<% end %>
   </div>
   
 </div>

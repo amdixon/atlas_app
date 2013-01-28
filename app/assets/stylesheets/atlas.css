@@ -291,6 +291,12 @@ input[type=submit] {
 .btn-wrap:hover{
 	opacity: 1.0;
 }
+
+.btn-absolute {
+	position:absolute;
+	bottom:-12px;
+}
+
 .footer-btn{
 	display: inline-block;
 	width: 22px;
@@ -302,15 +308,22 @@ input[type=submit] {
 	width: 22px;
 	background: url('profile.png') no-repeat;
 }
+
+.click-area {
+	opacity:0;
+}
+
 #save-btn{
 	position: relative;
 	height: 22px;
 	width: 22px;
 	background: url('save.png') no-repeat;
 }
+
 #profile-btn:hover, #save-btn:hover{
 	opacity: 1.0;
 }
+
 #search-wrap{
 	position: absolute;
 	top: 11px;

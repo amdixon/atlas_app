@@ -3,7 +3,7 @@ AtlasApp::Application.routes.draw do
   resources :city
   resources :search_suggestions
 
-  resources :users
+  resources :users, only: [:new, :create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
   resources :profiles
   resources :favorites do
