@@ -1,54 +1,3 @@
-<h1>You searched:</h1>
-
-<table>
-<% @city.each do |city| %>
-  <tr>
-    <td><%= city.name %>,</td>
-    <td><%= city.country %></td>
-  </tr>
-<% end %>
-</table>
-
-
-<% if signed_in? %>
-
-<div class="profile-container">
-	<div class="profile-user">		
-		<% if @profile.image %>
-			<%= image_tag @profile.image_url(:web) %>
-		<% else %>
-			<%= image_tag('user-blank.png')%>
-		<% end %>
-		
-		<%= @user.name %>
-		
-		<%= @profile.home %>
-	</div>
-	
-	<div class="profile-citylist">
-		<ul>
-			<% for city in user.cities %>
-				<% if city.position == 1 %>
-					<li class="profile-city-1">
-					<%= city.name %>
-					</li>
-				<% else %>
-					<li class="profile-city-all">
-					<%= city.name %>
-					</li>
-				<% end %>
-			<% end %>
-		</ul>
-	</div>
-</div>
-
-<% else %>
-
-Not signed in.
-
-<% end %>
-=======
-
 <!-- PROFILE SLIDE IN LEFT -->
 <div id="profile" style="display: none">
   
@@ -74,7 +23,7 @@ Not signed in.
 <!-- FOOTER -->
 <div id="footer-main">
   
-  <span class='btn-wrap'>
+  <span class='btn-wrap' id='profile-click'>
     <div class='footer-btn' id='profile-btn'></div>
   </span>
   <span class='btn-wrap'>
@@ -82,10 +31,13 @@ Not signed in.
   </span>
   
   <div id="search-wrap">
-    <form>
-      <input class="footer-search" id="footer-search" type="text" value="Enter City or Spin">
-      <input class="footer-search" id="footer-search-btn" value="O" type="submit">
-    </form>
+    
+    <%= form_tag city_index_path, :method => 'get', :class => 'footer-search' do %>
+      <%= text_field_tag :search, params[:search], :id => 'again', :title => "Enter City or Spin", :class => 'jq_watermark'  %>
+      <%= submit_tag "SPIN", :name => nil  %>
+    <% end %>
+    
+    
   </div>
   
   <div id="logo">
@@ -94,4 +46,4 @@ Not signed in.
   
 </div>
 
-<%= javascript_include_tag 'city.js' %>
+<%= javascript_include_tag 'atlas.js' %>
