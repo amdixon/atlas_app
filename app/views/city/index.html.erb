@@ -14,6 +14,8 @@
 
 
 <!-- MASONRY INFINITE SCROLL CONTENT -->
+<div id="spinner"></div>
+
 <div id="content-super">
 
   <div id="content">
@@ -292,6 +294,11 @@
   //set map height and width
   $('#map_canvas').height(height).width( width )
   
+  //////// spinner positioning ////////
+  $('#spinner').css({
+	top : height/2 - 60 + 'px',
+	left : width/2 - 12 + 'px',
+})
   
   
   /////// RE-SORTING PAGE AFTER AJAX API REQUESTS ///////
@@ -302,7 +309,7 @@
   setTimeout( function(){
       $(masonryContent).masonry();
       codeAddress();
-      
+      $('#spinner').fadeOut(500);
   }, 2000)
   
 

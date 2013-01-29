@@ -438,6 +438,16 @@ input[type=submit] {
 
 #hint {
 	position:absolute;
+	bottom:44px;
+	left:10px;
+	width:145px;
+	height:67px;
+	background:url('hint-black.png') no-repeat;
+	display:none;
+}
+
+#hint2 {
+	position:absolute;
 	bottom:50px;
 	left:8px;
 	width:145px;
@@ -446,5 +456,12 @@ input[type=submit] {
 	display:none;
 }
 
+#spinner {
+	position:absolute;
+	width:24px;
+	height:24px;
+	display:block;
+	background:url('spinner.gif') no-repeat;
+}
 
 
