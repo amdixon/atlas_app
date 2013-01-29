@@ -16,8 +16,10 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    sign_out
-    redirect_to :back
+    sign_out do |format|
+      format.html {redirect_to 'sessions/signin'}
+      format.js
+    end
   end
   
 end

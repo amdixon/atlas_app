@@ -1,7 +1,7 @@
 class FavoritesController < ApplicationController
   
   def create
-    @favorite = Favorite.create!(params[:favorite]) unless Favorite.exists?(params[:name][:profile_id])
+    @favorite = Favorite.create!(params[:favorite]) unless Favorite.exists?(params[:city_id] && params[:profile_id])
     respond_to do |format|
       format.html { redirect_to favorite_url }
       format.js

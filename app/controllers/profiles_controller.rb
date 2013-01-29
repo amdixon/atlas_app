@@ -17,12 +17,8 @@ class ProfilesController < ApplicationController
       @user = current_user
       @profile = Profile.new(params[:profile])
       if @profile.save
-        if params[:profile][:image].present?
-          render 'crop'
-        else
         flash[:success] = "Profile created successfully!"
         redirect_to @profile
-      end
       else
         render 'new'
       end
@@ -36,16 +32,15 @@ class ProfilesController < ApplicationController
     def update
       @user = current_user
       @profile = Profile.find(params[:id])
+      @favorites = Favorite.where("profile_id = ?", @profile.user_id).limit(10)
       respond_to do |format|
        @profile.update_attributes(params[:profile])
-          if params[:profile][:image].present?
-          format.html {redirect_to }
+          
+          format.html {redirect_to @profile}
           format.js
-         else
-           format.html {redirect_to @profile}
-           format.js {}
+         
          end
-    end
+
     end
     
     def destroy

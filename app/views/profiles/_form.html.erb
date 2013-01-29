@@ -4,7 +4,7 @@
 	<ul>
 		<li>
 		<% if @profile.image? %>
-			<%= image_tag profile.image_url(:web) %><br />
+			<%= image_tag @profile.image_url(:web) %><br />
 			<%= f.file_field :image, class: "form-file" %><br />
 			Change your profile image.<br />
 		<% else %>
