@@ -4,6 +4,10 @@
   }
 </style>
 
+<!-- HINT ON FIRST VIEW -->
+
+<div id="hint"></div>
+
 <!-- PROFILE SLIDE IN LEFT -->
 
 <div id="profile" style="display: none">
@@ -71,6 +75,14 @@
       delay: 100,
       minLength: 2,
     })
+
+	if (document.cookie.indexOf('visited=true') == -1) {
+	        var oneDay = 1000*60*60*24*1;
+	        var expires = new Date((new Date()).valueOf() + oneDay);
+	        document.cookie = "visited=true;expires=" + expires.toUTCString();
+	       	$('#hint').hide()
+			$('#hint').delay(1000).fadeIn(900)
+	    }
     
     
     $('#content').fadeIn(1000);

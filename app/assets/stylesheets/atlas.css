@@ -98,9 +98,14 @@ a:hover {
 }
 
 .profile-fav {
-	font-size:1.2em;
-	font-weight:700;
-	letter-spacing:1px;
+	font-family:Prata, serif;
+	font-size:1em;
+	font-weight:300;
+	letter-spacing:2px;
+}
+
+.background-text {
+	color:#999;
 }
 
 #favorite-list {
@@ -125,6 +130,14 @@ a:hover {
 }
 
 #favorites li a {
+	color:#f3f3f3;
+}
+
+#favorites li a:hover {
+	color:#999;
+}
+
+#favorites li a.right {
 	float:right;
 }
 
@@ -191,15 +204,15 @@ a:hover {
 	text-align: center;
 	font-weight: bold;
 	letter-spacing: 2px;
-	background: #333;
-	color: #aaa;
+	background: #444;
+	color: #f3f3f3;
 	cursor: pointer;
 	border-radius: 2px;
 }
 
 .big-search input[type=submit]:hover{
 	color: #ccc;
-	background: #111;
+	background: #333;
 }
 
 #masonry-content .col1 { width: 220px; }
@@ -421,6 +434,16 @@ input[type=submit] {
 	top: 16px;
 	right: 46px;
 	z-index: 2000;
+}
+
+#hint {
+	position:absolute;
+	bottom:50px;
+	left:8px;
+	width:145px;
+	height:67px;
+	background:url('hint-black.png') no-repeat;
+	display:none;
 }
 
 
