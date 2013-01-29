@@ -177,6 +177,15 @@ a:hover {
 	letter-spacing: 1px;
 }
 
+#home-globe {
+	position:absolute;
+	width:530px;
+	height:530px;
+	display:block;
+	background:url('globe-lg.png') no-repeat;
+	z-index:-1;
+}
+
 .big-search{
 	text-align: center;
 	display: block;

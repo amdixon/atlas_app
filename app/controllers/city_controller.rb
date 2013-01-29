@@ -2,7 +2,6 @@ class CityController < ApplicationController
 
   def index
     test = params[:search]
-    
     if test != ''
       search = test.upcase
       @city = City.search(params[:search]).take(1)
