@@ -1,10 +1,19 @@
 class FavoritesController < ApplicationController
   
   def create
-    @favorite = Favorite.create!(params[:favorite]) unless Favorite.exists?(params[:name][:profile_id])
-    respond_to do |format|
-      format.html { redirect_to favorite_url }
-      format.js
+    @profile = current_user.profile
+    @favorites = Favorite.where("profile_id = ?", @profile.user_id)
+    @favorites.each do |f|
+      if f.city_id == params[:city_id]
+        @check = true
+      end
+    end 
+    if @check == nil
+      @favorite = Favorite.create!(params[:favorite]) unless Favorite.exists?(params[:favorite])
+      respond_to do |format|
+        format.html { redirect_to favorite_url }
+        format.js
+      end
     end
   end
   

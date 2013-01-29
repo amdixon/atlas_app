@@ -9,7 +9,7 @@ class Profile < ActiveRecord::Base
   mount_uploader :image, ProfileImageUploader
   
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
-  after_update :crop_photo
+  
 
   def crop_photo
     photo.recreate_versions! if crop_x.present?

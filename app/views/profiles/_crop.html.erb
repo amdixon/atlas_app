@@ -2,11 +2,11 @@ Crop photo<br />
 
 <%= image_tag @profile.image_url(:crop), id: "cropbox" %>
 
-<%= form_for(@profile) do |f| %>
+<%= form_for(@profile) remote: true do |f| %>
   <% %w[x y w h].each do |attribute| %>
     <%= f.hidden_field "crop_#{attribute}" %>
   <% end %>
   <div class="actions">
-    <%= f.submit "Crop" %>
+    <%= f.submit "Crop", class: "btn" %>
   </div>
 <% end %>

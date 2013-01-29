@@ -2,11 +2,16 @@
   <div id='profile-content'>
   
   	<% if signed_in? %>
+	<div id="profile-container">
 		<div id="profile-header">
 			<%= image_tag('globe.png') %><br /><br />
 			
             <span class="profile-name"><%= current_user.name.upcase %></span><br />
-			<span class="profile-home"><%= @profile.home.upcase %></span>
+			<span class="profile-home">
+				<% if @profile.home? %>
+				<%= @profile.home.upcase %>
+				<% end %>
+			</span>
 		</div>
 		
 		<div id="favorite-list">
@@ -16,7 +21,7 @@
 		
 				<% @favorites.each do |favorite| %>
 					<%= content_tag_for :li, favorite do %>
-						<%= favorite.name %>, <%= favorite.country %> <%= favorite.position %>
+						<%= favorite.name %>, <%= favorite.country %>
 						<%= link_to "", favorite, method: :delete, class: "remove-btn", remote: true %>
 					<% end %>
 				<% end %>
@@ -24,8 +29,8 @@
 			</ul><br />
 		</div>
 		
-            <%= link_to "Sign Out", signout_path, method: :delete, class: "btn"%>
-
+            <%= link_to "Sign Out", signout_path, method: :delete, class: "btn", remote: true %>
+	</div>
 	<% else %>
             <%= render :partial => '/sessions/signin' %>
 	<% end %>
