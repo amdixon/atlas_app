@@ -377,11 +377,20 @@ input[type=submit] {
 	opacity:0;
 }
 
+#fake-save-btn{
+	position: relative;
+	display:block;
+	height: 22px;
+	width: 22px;
+	background: url('save.png') no-repeat;
+}
+
 #save-btn{
 	position: relative;
 	display:block;
 	height: 22px;
 	width: 22px;
+	top:-28px;
 	background: url('save.png') no-repeat;
 }
 
