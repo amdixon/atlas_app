@@ -29,7 +29,9 @@
       </div>
     
       
-      <div class="story col2" id="wiki_0">
+      <div class="story col2">
+        <h2 style="font-size: 12px">VITALS</h2>
+        <p id="wiki_0"></p>
       </div>
     
       
@@ -295,18 +297,15 @@
   
   
   //////// WIKIPEDIA API /////////////
-  var wikiURL = "http://en.wikipedia.org/w/api.php?callback=?&action=query&list=search&format=json&srprop=snippet&srlimit=1";
-  var wikiQuery = wikiURL + '&srsearch=' + city_name;
+  var freeURL = "https://www.googleapis.com/freebase/v1/text/en/";
+  var freeQuery = freeURL + city_name.toLowerCase();
   
-  
-  $.getJSON(wikiQuery, function(data){
-    // Build the html string for the current tweet
-    var wiki_html = '' + data.query.search[0].snippet
-    
-    // Append html string to tweet_container div
-    var wiki_location = '#wiki_0';
-    $(wiki_location).append(wiki_html);
-      
+  $.getJSON(freeQuery, function(data){
+        var free_html = data.result;
+        var free_split = free_html.split('.');
+        
+        // Append html string to container
+        $('#wiki_0').append( free_split[0] + '.' + free_split[1] );
   });
     
   
