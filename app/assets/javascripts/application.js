@@ -17,6 +17,6 @@
 //= require jquery.infinitescroll.min
 //= require jquery.masonry.min
 //= require jquery.Jcrop.min
-//= require jquery.jscrollpane.js
-//= require jquery.mousewheel.js
+//= require jquery.jscrollpane
+//= require jquery.mousewheel
 //= require_tree .

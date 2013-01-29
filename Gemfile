@@ -24,5 +24,6 @@ end
 # Gems used only for production
 group :production do
   gem 'pg' 
+  gem 'fog'
 end
 
