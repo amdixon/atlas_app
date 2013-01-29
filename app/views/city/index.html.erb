@@ -365,15 +365,17 @@
   
   //////// FLICKR API /////////////
   var flickrURL = "http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=6cd67f99c979719b322e087ba4030fe8&safe_search=1&per_page=20&license=1";
-  var flickrQuery = flickrURL + "&tags=" + city_name
+  var flickrQuery = flickrURL + "&tags=" + city_name + "&extras=owner_name";
   
   $.getJSON(flickrQuery + "&format=json&jsoncallback=?", function(data){
       $.each(data.photos.photo, function(i,item){
           var src = "http://farm"+ item.farm +".static.flickr.com/"+ item.server +"/"+ item.id +"_"+ item.secret +"_z.jpg";
           
           var flickr_location  = '#flickr_' + parseInt(i);
-          $(flickr_location).append( $("<img/>").attr("src", src) )
-
+          $(flickr_location).append( $("<img/>").attr("src", src) );
+          $(flickr_location).append( $("<p/>").html( item.ownername ) );
+          console.log( item.owner_name );
+          
           if ( i == 11 ) return false;
       });
   });
