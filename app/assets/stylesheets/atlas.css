@@ -367,6 +367,7 @@ input[type=submit] {
 }
 #profile-btn{
 	position: relative;
+	display: block;
 	height: 22px;
 	width: 22px;
 	background: url('profile.png') no-repeat;
@@ -381,7 +382,6 @@ input[type=submit] {
 	display:block;
 	height: 22px;
 	width: 22px;
-	bottom:10px;
 	background: url('save.png') no-repeat;
 }
 
