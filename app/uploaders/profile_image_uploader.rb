@@ -22,7 +22,7 @@ class ProfileImageUploader < CarrierWave::Uploader::Base
 
     # Resize for cropping:
     version :crop do
-      resize_to_limit(600, 600)
+      resize_to_limit(260, 260)
     end
     
     # Resize image for the web:
@@ -38,7 +38,7 @@ class ProfileImageUploader < CarrierWave::Uploader::Base
     
     def crop
       if model.crop_x.present?
-        resize_to_limit(600, 600)
+        resize_to_limit(260, 260)
         manipulate! do |img|
           x = model.crop_x.to_i
           y = model.crop_y.to_i

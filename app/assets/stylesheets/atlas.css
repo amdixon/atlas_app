@@ -2,7 +2,6 @@
 html {
 	margin: 0;
 	padding: 0;
-	background-color: #f3f3f3;
 	font-size:10pt;
 	color:#333;
 	font-family:Helvetica, Arial, sans-serif;
@@ -18,7 +17,7 @@ body {
 	overflow-x: hidden;
 }
 
-ul, ol, li {list-style:none;}
+ul, ol, li {list-style:none;margin:0;padding:0;}
 
 h1 { /* atlas title font */
 	font-family: serif;
@@ -39,6 +38,15 @@ h3 { /* big azz serif font */
 h4 { /* big azz sans-serif font */
 	font-size:30pt;
 	text-transform:uppercase;
+}
+
+h5 { /* profile name font */
+	font-size:2em;
+	font-weight:700;
+}
+
+h6 { /* profile name font */
+	
 }
 
 p {
@@ -62,17 +70,63 @@ a:hover {
 	float: left;
 	width: 300px;
 	height: 100%;
-	background: #777;
+	background: #555;
+	color:#f3f3f3;
 	z-index: 10;
 }
 #profile-content{
-	margin: 0 20px 0 22px;
+	margin: 40px 20px 0 20px;
+	font-family:Lato, Helvetica, sans-serif;
 }
+
 .row{
 	display: block;
 	margin-top: 80px;
 }
 
+.profile-name {
+	font-size:1.6em;
+	font-weight:700;
+	letter-spacing:2px;
+}
+
+.profile-home {
+	font-size:1em;
+	font-weight:300;
+	color:#999;
+	letter-spacing:2px;
+}
+
+.profile-fav {
+	font-size:1.2em;
+	font-weight:700;
+	letter-spacing:1px;
+}
+
+#favorite-list {
+	margin-top:40px;
+}
+
+#favorites {
+	margin:0px 0px 0px 0px ;
+	padding:0px;
+}
+
+#favorites li {
+	font-family:Lato;
+	font-size:11px;
+	font-weight:300;
+	letter-spacing:1px;
+	background-color:#444;
+	color:#f3f3f3;
+	padding:6px 10px 6px 10px;
+	margin-top:6px;
+	cursor:move;
+}
+
+#favorites li a {
+	float:right;
+}
 
 
 /* Container */
@@ -315,12 +369,23 @@ input[type=submit] {
 
 #save-btn{
 	position: relative;
+	display:block;
 	height: 22px;
 	width: 22px;
+	bottom:10px;
 	background: url('save.png') no-repeat;
 }
 
-#profile-btn:hover, #save-btn:hover{
+.remove-btn {
+	width:10px;
+	height:13px;
+	margin-top:4px;
+	display:block;
+	opacity:0.7;
+	background:url('trash-can.png') no-repeat;
+}
+
+#profile-btn:hover, #save-btn:hover, .remove-btn:hover {
 	opacity: 1.0;
 }
 
@@ -335,4 +400,6 @@ input[type=submit] {
 	right: 46px;
 	z-index: 2000;
 }
+
+
 

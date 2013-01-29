@@ -1,25 +1,29 @@
 <% provide(:title, "Profile") %>
 
 <% if signed_in? %>
+	<div id="profile-header">
+		<%= image_tag('globe.png') %><br /><br />
+		
+        <span class="profile-name"><%= current_user.name.upcase %></span><br />
+		<span class="profile-home"><%= @profile.home.upcase %></span>
+	</div>
+	
+	<div id="favorite-list">
+			<span class="profile-fav">TOP 10 CITIES</span>
+		
+		<ul id="favorites" data-update-url="<%= sort_favorites_path %>">
+	
+			<% for favorite in @profile.favorites do %>
+				<%= content_tag_for :li, favorite do %>
+					<%= favorite.name %>, <%= favorite.country %> <%= favorite.position %>
+					<%= link_to "", favorite, method: :delete, class: "remove-btn", remote: true %>
+				<% end %>
+			<% end %>
 
-<% if @profile.image %>
-	<%= image_tag @profile.image_url(:web) %>
-<% else %>
-	<%= image_tag('user-blank.png') %>
-<% end %>
-
-<p>Hey, <%= current_user.name %></p>
-<%= @profile.home %>
-
-<p>Current favorites:</p>
-
-<ul id="favorites" data-update-url="<%= sort_favorites_path %>">
-	<% @favorites.each do |favorite| %>
-		<%= content_tag_for :li, favorite do %>
-			<%= favorite.name %>, <%= favorite.country %>
-		<% end %>
-	<% end %>
-</ul>
+		</ul><br />
+	</div>
+	
+        <%= link_to "Sign Out", signout_path, method: :delete, class: "btn"%>
 
 <% else %>
 

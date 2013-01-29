@@ -9,10 +9,9 @@ class SessionsController < ApplicationController
       sign_in user
       @profile = current_user.profile
       @favorites = Favorite.all
-      render "profiles/show"
+      render 'profiles/show'
     else
           flash.now[:error] = 'Invalid email/password combination'
-          render 'new'
     end
   end
 
