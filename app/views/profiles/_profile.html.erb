@@ -12,18 +12,18 @@
 		</div>
 		
 		<div id="favorite-list">
-				<span class="profile-fav">TOP 10 CITIES</span>
+				<span class="profile-fav">TOP 10</span>
 			
 			<ul id="favorites" data-update-url="<%= sort_favorites_path %>">
 		
 				<% @favorites.each do |favorite| %>
 					<%= content_tag_for :li, favorite do %>
-						<%= favorite.name %>, <%= favorite.country %>
-						<%= link_to "", favorite, method: :delete, class: "remove-btn", remote: true %>
+						<%= link_to favorite.favorite_link, city_index_path(:search => favorite.name) %>
+						<%= link_to "", favorite, method: :delete, class: "remove-btn right", remote: true %>
 					<% end %>
 				<% end %>
 			</ul><br />
-			<p>(drag n' drop cities to reorder)</p><br />
+			<p class="background-text">(drag n' drop cities to reorder)</p><br />
 		</div>
 		
             <%= link_to "Sign Out", signout_path, method: :delete, class: "btn", remote: true %>

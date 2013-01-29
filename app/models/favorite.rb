@@ -7,4 +7,8 @@ class Favorite < ActiveRecord::Base
   
   default_scope order: "position"
   
+  def favorite_link
+    name + ',' + ' ' + country
+  end
+  
 end
