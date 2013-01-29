@@ -54,6 +54,12 @@ $(document).ready( function(){
     $('#search').focus();
   }, 600)
   
+  $('#again').focus( function(){
+    $(this).animate({
+	'border-top': '2px solid #aaa',
+	'width': '320px',
+    }, 10)
+  })
   
     
 })//// document ready ////

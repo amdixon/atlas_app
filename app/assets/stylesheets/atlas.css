@@ -276,10 +276,7 @@ input[type=submit] {
 	border-radius: 2px;
 	border-top: 2px solid #ddd;
 }
-.footer-search input[type=text]:focus{
-	border-top: 2px solid #aaa;
-	width: 320px;
-}
+
 
 .footer-search input[type=submit]{
 	position: relative;
