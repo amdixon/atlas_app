@@ -367,6 +367,7 @@
   //////// WIKIPEDIA API /////////////
   var freeURL = "https://www.googleapis.com/freebase/v1/text/en/";
   var freeQuery = freeURL + city_name.split(' ').join('_').toLowerCase();
+  freeQuery += "?callback=?"
   
   $.getJSON(freeQuery, function(data){
         var free_html = data.result;
