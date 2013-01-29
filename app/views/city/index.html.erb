@@ -10,7 +10,7 @@
 
 <!-- MASONRY INFINITE SCROLL CONTENT -->
 <div id="content-super">
-<div id="content-wrap">
+
   <div id="content">
   
     <div id="tumblelog" style="opacity: 0">
@@ -127,10 +127,6 @@
       </div>
     
     
-      <div class="story col3" id="vimeo_2">
-         <object width="700" height="394"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=7174318&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=1&amp;color=dd4499&amp;fullscreen=1" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=7174318&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=1&amp;color=dd4499&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="700" height="394"></embed></object>
-      </div>
-    
       
       <div class="story col1">
         <blockquote>
@@ -154,8 +150,8 @@
   
   </div><!-- /#content -->
 
-</div><!-- /#content-wrap -->
 </div><!-- /#content-super -->
+
 
 <!-- GOOGLE MAPS -->
 <div id="map_container">
@@ -229,11 +225,12 @@
   /////// RE-SORTING PAGE AFTER AJAX API REQUESTS ///////
   setTimeout( function(){
     $(masonryContent).animate({'opacity': 1.0}, 1000);
-    
+    $('#content-super').jScrollPane();
   }, 2500)
   setTimeout( function(){
       $(masonryContent).masonry();
       codeAddress();
+      
   }, 2000)
   
 

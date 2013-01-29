@@ -10,5 +10,6 @@
  *
  *= require_self
  *= require jquery.Jcrop.min
+ *= require jscrollpane.css
  *= require_tree .
  */
