@@ -36,16 +36,16 @@ class ProfilesController < ApplicationController
     def update
       @user = current_user
       @profile = Profile.find(params[:id])
-       if @profile.update_attributes(params[:profile])
-         if params[:profile][:image].present?
-           render 'crop'
+      respond_to do |format|
+       @profile.update_attributes(params[:profile])
+          if params[:profile][:image].present?
+          format.html {redirect_to }
+          format.js
          else
-           flash[:success] = "Profile updated successfully!"
-           redirect_to @profile
+           format.html {redirect_to @profile}
+           format.js {}
          end
-      else
-        render 'edit'
-      end
+    end
     end
     
     def destroy

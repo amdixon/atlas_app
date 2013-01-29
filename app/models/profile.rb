@@ -1,10 +1,10 @@
 class Profile < ActiveRecord::Base
-  attr_accessible :home, :image, :crop_x, :crop_y, :crop_w, :crop_h
+  attr_accessible :home, :image, :crop_x, :crop_y, :crop_w, :crop_h, :favorites_attributes
   
   belongs_to :user
   
-  has_many :places, :dependent => :destroy
-  has_many :favorites, :through => :places
+  has_many :favorites
+  accepts_nested_attributes_for :favorites
   
   mount_uploader :image, ProfileImageUploader
   

@@ -1,8 +1,6 @@
 
-
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsHokK7K5SsgGteZDd8gl2G0OfC9a8eQg&sensor=false"></script>
 <link href='http://fonts.googleapis.com/css?family=Lato:300,700|Prata' rel='stylesheet' type='text/css'>
-
 
 
 <!-- PROFILE SLIDE IN LEFT -->
@@ -177,19 +175,25 @@
   <span class='btn-wrap' id='profile-click'>
     <div class='footer-btn' id='profile-btn'></div>
   </span>
+	
 	<% @city.each do |city| %>
   	<% if signed_in? %>
-	<%= form_for @favorite, remote: true do |f| %>
+	<%= form_for @newfav, remote: true do |f| %>
+		<%= f.hidden_field :profile_id, :value => current_user.id %>
 		<%= f.hidden_field :city_id, :value => city.id %>
 		<%= f.hidden_field :name, :value => city.name %>
 		<%= f.hidden_field :country, :value => city.country %>
-		<span class='btn-wrap btn-absolute' id="save-btn">
-		  <%= f.submit 'O', class: "click-area" %>
+		<span class='btn-wrap'>
+		  <%= f.submit '', id: "save-btn" %>
+		</span>
+	<% end %>
+	<% else %>
+		<span class='btn-wrap'>
+		  <a id="save-btn" href="#" alt="Login to save places."></a>
 		</span>
 	<% end %>
 	<% end %>
-	<% end %>
-  
+
   <div id="search-wrap">
     
     <%= form_tag city_index_path, :method => 'get', :class => 'footer-search' do %>

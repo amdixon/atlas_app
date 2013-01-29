@@ -13,13 +13,11 @@ class UsersController < ApplicationController
     end
     
     def create
-      @user = User.new(params[:user])
-      
-      if @user.save
-        flash[:success] = "Profile created successfully!"
-        redirect_to edit_profile_path(@user.profile)
-      else
-        render 'new'
+      @user = User.create!(params[:user])
+      @profile = @user.profile
+      respond_to do |format|
+        format.html {redirect_to profile_path(@user.profile)}
+        format.js {}
       end
     end
 end

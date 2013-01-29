@@ -3,10 +3,7 @@ class Favorite < ActiveRecord::Base
   
   attr_accessible :city_id, :name, :country, :position, :profile_id
   
-  belongs_to :profile
-  
-  has_many :places, :dependent => :destroy
-  has_many :cities, :through => :places
+  belongs_to :profile, :dependent => :destroy
   
   default_scope order: "position"
   

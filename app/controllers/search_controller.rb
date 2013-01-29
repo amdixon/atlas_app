@@ -4,7 +4,7 @@ class SearchController < ApplicationController
     @city = City.first(10)
     if signed_in?
       @profile = current_user.profile
-      @favorites = Favorite.first(10)
+      @favorites = Favorite.where("profile_id = ?", @profile.user_id)
     end
   end
   

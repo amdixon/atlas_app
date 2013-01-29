@@ -1,8 +1,7 @@
 class FavoritesController < ApplicationController
   
   def create
-
-    @favorite = Favorite.create!(params[:favorite])
+    @favorite = Favorite.create!(params[:favorite]) unless Favorite.exists?(params[:name][:profile_id])
     respond_to do |format|
       format.html { redirect_to favorite_url }
       format.js
@@ -15,5 +14,13 @@ class FavoritesController < ApplicationController
     end
     render nothing: true
   end
+  
+  def destroy
+      @favorite = Favorite.destroy(params[:id])
+      respond_to do |format|
+        format.html { redirect_to favorites_url }
+        format.js
+      end
+    end
   
 end
