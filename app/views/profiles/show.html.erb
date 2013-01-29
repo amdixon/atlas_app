@@ -20,7 +20,7 @@
 	
 			<% @favorites.each do |favorite| %>
 				<%= content_tag_for :li, favorite do %>
-					<%= favorite.name %>, <%= favorite.country %> <%= favorite.position %>
+					<%= favorite.name %>, <%= favorite.country %>
 					<%= link_to "", favorite, method: :delete, class: "remove-btn", remote: true %>
 				<% end %>
 			<% end %>

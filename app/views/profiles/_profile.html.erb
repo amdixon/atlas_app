@@ -1,7 +1,4 @@
-<div id="profile" style="display: none">
-  <div id='profile-content'>
-  
-  	<% if signed_in? %>
+	<% if signed_in? %>
 	<div id="profile-container">
 		<div id="profile-header">
 			<%= image_tag('globe.png') %><br /><br />
@@ -25,8 +22,8 @@
 						<%= link_to "", favorite, method: :delete, class: "remove-btn", remote: true %>
 					<% end %>
 				<% end %>
-	
 			</ul><br />
+			<p>(drag n' drop cities to reorder)</p><br />
 		</div>
 		
             <%= link_to "Sign Out", signout_path, method: :delete, class: "btn", remote: true %>
@@ -34,6 +31,3 @@
 	<% else %>
             <%= render :partial => '/sessions/signin' %>
 	<% end %>
-	
-  </div>
-</div>
