@@ -257,10 +257,12 @@
   $.getJSON(flickrQuery + "&format=json&jsoncallback=?", function(data){
       $.each(data.photos.photo, function(i,item){
           var src = "http://farm"+ item.farm +".static.flickr.com/"+ item.server +"/"+ item.id +"_"+ item.secret +"_z.jpg";
-          var flickr_location  = '#flickr_' + parseInt(i);
+          var flickr_location  = '#flickr_' + ( parseInt(i)/3 -1 );
           
-          $(flickr_location).append( $("<img/>").attr("src", src) )
-          if ( i == 6 ) return false;
+          if (parseInt(i) % 3 == 0){
+            $(flickr_location).append( $("<img/>").attr("src", src) )
+          }
+          if ( i == 19 ) return false;
       });
   });
 
