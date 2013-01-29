@@ -130,20 +130,21 @@ a:hover {
 
 
 /* Container */
-#container {
-	margin:0 auto;
-	width:960px;
-}
-
-#content{
+#content-super{
 	position: absolute;
 	z-index: 0;
 	width: 100%;
-	margin-left: 20px;
-	padding: 0 0 60px 0;
+	height: 100px;
+	overflow: auto;
 }
-
-
+#content-wrap{
+	display: block;
+	width: 100%;
+}
+#content{
+	width: 100%;
+	margin: 0 0 0 0;
+}
 
 #home{
 	text-align: center;
@@ -205,7 +206,20 @@ a:hover {
 #masonry-content .col2 { width: 460px; }
 #masonry-content .col3 { width: 700px; }
 
+#map_container{
+	position: relative;
+	text-align: center;
+	margin: 0 auto;
+	z-index: -1;
+}
+#map_wrap{
+  position: fixed;
 
+}
+#map_canvas {
+  width: 1000px;
+  height:600px 
+}
 
 
 /* Inputs */
@@ -305,11 +319,6 @@ input[type=submit] {
 
 
 /* Footer */
-#footer {
-	position: absolute;
-	bottom:15px;
-	left:20px;
-}
 #footer-home {
 	position:fixed;
 	left:0px;
@@ -358,6 +367,7 @@ input[type=submit] {
 }
 #profile-btn{
 	position: relative;
+	display: block;
 	height: 22px;
 	width: 22px;
 	background: url('profile.png') no-repeat;
@@ -372,7 +382,6 @@ input[type=submit] {
 	display:block;
 	height: 22px;
 	width: 22px;
-	bottom:10px;
 	background: url('save.png') no-repeat;
 }
 
