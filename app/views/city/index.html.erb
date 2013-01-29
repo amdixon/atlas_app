@@ -235,6 +235,23 @@
       })
   })
   
+  
+  var profileVisible = false;
+
+
+  $('#profile-click').click( function(){
+    if (profileVisible){
+      $('#profile').hide('slide', {direction: "left"}, 400 );
+      profileVisible = false;
+    } else {
+      $('#profile').show('slide', {direction: "left"}, 400 );
+      profileVisible = true;
+    }
+    
+  });
+  
+  
+  
   /////// LOAD WHEN DOCUMENT READY /////////////
   $(document).ready( function(){
   
@@ -256,7 +273,7 @@
       
   })//// document ready ////
   
-  
+
   
   
   
