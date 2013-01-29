@@ -448,12 +448,11 @@ input[type=submit] {
 
 #hint2 {
 	position:absolute;
-	bottom:50px;
-	left:8px;
+	bottom:65px;
+	left:62px;
 	width:145px;
 	height:67px;
-	background:url('hint-black.png') no-repeat;
-	display:none;
+	background:url('hint-black-2.png') no-repeat;
 }
 
 #spinner {
