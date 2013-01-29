@@ -44,7 +44,48 @@
 </div>
 
 
-<%= javascript_include_tag 'atlas.js' %>
+<script>
+  $.watermarker.setDefaults({left: -3});
+  
+  var profileVisible = false;
 
-
-
+  $('#profile-click').click( function(){
+    if (profileVisible){
+      $('#profile').hide('slide', {direction: "left"}, 400 );
+      profileVisible = false;
+    } else {
+      $('#profile').show('slide', {direction: "left"}, 400 );
+      profileVisible = true;
+    }
+    
+  });
+  
+  /////// LOAD WHEN DOCUMENT READY /////////////
+  $(document).ready( function(){
+  
+    //main page autocomplete
+    $('#search').autocomplete({
+      source: "/search_suggestions",
+      delay: 100,
+      minLength: 2,
+    })
+    
+    
+    $('#content').fadeIn(1000);
+    
+    
+    setTimeout( function(){
+      $('#search').focus();
+    }, 600)
+    
+    $('#again').focus( function(){
+      $(this).animate({
+          'border-top': '2px solid #aaa',
+          'width': '320px',
+      }, 10)
+    })
+    
+      
+  })//// document ready ////
+  
+</script>
