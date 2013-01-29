@@ -1,25 +1,18 @@
-<div id="profile-update-form">
+<div id="profile-update-form" class="user-input">
 <%= form_for @profile, remote: true do |f| %>
 
 	<ul>
+		
+		<p>Welcome to<br /><br />
+			<%= image_tag('logo.png')%><br /><br /><br />
+			 Add a home base to your profile:</p>	
+		
 		<li>
-		<% if @profile.image? %>
-			<%= image_tag @profile.image_url(:web) %><br />
-			<%= f.file_field :image, class: "form-file" %><br />
-			Change your profile image.<br />
-		<% else %>
-			<%= image_tag('user-blank.png') %><br />
-			<%= f.file_field :image, class: "form-file" %><br />
-			Add a profile image.<br />
-		<% end %>
+			<%= f.text_field :home, :title => "Your City", class: "jq_watermark call-watermark" %><br /><br />
 		</li>
 		
 		<li>
-		<%= f.text_field :home, :title => "Your City", class: "jq_watermark" %><br />
-		</li>
-		
-		<li>
-		<%= f.submit "Update!", class: "btn" %>
+		<%= f.submit "Finish!", class: "btn" %>
 		</li>
 	</ul>
 	

@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       sign_in user
       @profile = current_user.profile
-      @favorites = Favorite.all
+      @favorites = Favorite.where("profile_id = ?", @profile.user_id).limit(10)
       render 'profiles/show'
     else
           flash.now[:error] = 'Invalid email/password combination'

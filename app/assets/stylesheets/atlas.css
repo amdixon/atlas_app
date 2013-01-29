@@ -251,6 +251,12 @@ input[type=password] {
 input[type=submit] {
 	cursor: pointer;
 }
+
+#profile-update-form ul, #profile-update-form ul li {
+	margin:0;
+	padding:0;
+}
+
 .user-input input[type=text], input[type=password]{
 	display: block;
 	width:240px;
@@ -297,6 +303,7 @@ input[type=submit] {
 
 /* Buttons */
 .btn {
+	font-family:Helvetica, sans-serif;
 	padding:3px 6px 4px 6px;
 	color:#333;
 	background-color:#ccc;
