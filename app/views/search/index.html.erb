@@ -20,9 +20,10 @@
 
 <!-- MASONRY INFINTE SCROLL CONTENT -->
 <div id="content" style="display: none">
-	<div id="home-globe"></div>
+	
 
   <div id="home">
+	
 	
 	
     <%= image_tag 'atlas.png' %>
@@ -33,7 +34,8 @@
       <%= text_field_tag :search, params[:search], :title => "Enter City or Spin", :class => 'jq_watermark'  %>
       <%= submit_tag "SPIN", :name => nil  %>
     <% end %>
-
+	
+	<div id="home-globe"><%= image_tag('globe-lg.png')%></div>
     
   </div><!-- /home -->
   
@@ -81,11 +83,6 @@
       minLength: 2,
     })
 	
-
-	$('#home-globe').css({
-		top : height/2 - 330 + 'px',
-		left : width/2 - 265 + 'px',
-	})
 
 	if (document.cookie.indexOf('visited=true') == -1) {
 	        var oneDay = 1000*60*60*24*1;

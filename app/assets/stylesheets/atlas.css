@@ -178,11 +178,10 @@ a:hover {
 }
 
 #home-globe {
-	position:absolute;
-	width:530px;
-	height:530px;
+	position:relative;
+	margin:-336px 0 0 0;
 	display:block;
-	background:url('globe-lg.png') no-repeat;
+	background:no-repeat;
 	z-index:-1;
 }
 
