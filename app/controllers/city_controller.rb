@@ -2,10 +2,9 @@ class CityController < ApplicationController
 
   def index
     test = params[:search]
-    
     if test != ''
       search = test.upcase
-      @city = City.search(params[:search]).take(1)
+      @city = City.search(search).take(1)
     else
       @city = City.find(:all, :order => 'RANDOM ()').take(1)
     end

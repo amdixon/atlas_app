@@ -20,8 +20,12 @@
 
 <!-- MASONRY INFINTE SCROLL CONTENT -->
 <div id="content" style="display: none">
+	
 
   <div id="home">
+	
+	
+	
     <%= image_tag 'atlas.png' %>
     
     <h2 style="visibility: visible">VISUAL PLACES</h2>
@@ -30,7 +34,8 @@
       <%= text_field_tag :search, params[:search], :title => "Enter City or Spin", :class => 'jq_watermark'  %>
       <%= submit_tag "SPIN", :name => nil  %>
     <% end %>
-
+	
+	<div id="home-globe"><%= image_tag('globe-lg.png')%></div>
     
   </div><!-- /home -->
   
@@ -53,7 +58,9 @@
   $.watermarker.setDefaults({left: -3});
   
   var profileVisible = false;
-
+  
+  var height = $(window).height()
+  var width = $(window).width()
 
   $('#profile-click').click( function(){
     if (profileVisible){
@@ -75,6 +82,7 @@
       delay: 100,
       minLength: 2,
     })
+	
 
 	if (document.cookie.indexOf('visited=true') == -1) {
 	        var oneDay = 1000*60*60*24*1;
@@ -85,7 +93,7 @@
 	    }
     
     
-    $('#content').fadeIn(1000);
+    $('#content').delay(300).fadeIn(1000);
     
     
     setTimeout( function(){
