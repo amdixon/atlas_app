@@ -7,6 +7,7 @@ gem 'carrierwave', '>= 0.5.3'
 gem 'acts_as_list'
 gem 'jquery-rails', '2.0.2'
 gem 'omniauth-facebook'
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
@@ -25,7 +26,5 @@ end
 group :production do
   gem 'pg' 
   gem 'fog'
-  gem "hirb"
-  gem 'newrelic_rpm'
 end
 
